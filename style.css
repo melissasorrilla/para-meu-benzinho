@@ -481,3 +481,47 @@ p.zap-message{
     opacity:.8;
 
 }
+
+/* ===========================
+   RESPONSIVO (CELULAR)
+=========================== */
+
+@media (max-width: 768px) {
+    /* Permite que a página role verticalmente no celular se o conteúdo for longo */
+    body {
+        overflow-y: auto;
+    }
+
+    /* Ajusta os tamanhos do container/páginas da carta */
+    .page {
+        width: 90%;
+        height: auto;           /* Altura automática para o texto caber sem cortar */
+        min-height: 500px;      /* Altura mínima bonita */
+        padding: 30px 20px;     /* Menos espaço nas bordas pra aproveitar a tela */
+        border-radius: 20px;
+    }
+
+    /* Reduz o tamanho do título principal da capa */
+    .cover h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+
+    /* Reduz o tamanho dos títulos internos */
+    .content h2 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    /* Ajusta os parágrafos para o texto ler melhor em tela pequena */
+    .content p, .subtitle {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Garante que os botões tenham espaço */
+    #openBook {
+        margin-top: 25px;
+        padding: 12px 28px;
+    }
+}
