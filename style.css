@@ -531,60 +531,56 @@ p.zap-message{
         justify-content: center;
         gap: 10px;
     }
-
-    /* ENVELOPE DESTRAVADO */
-    .envelope-wrapper {
-  position: relative !important;
-        width: 100% !important;
-        max-width: 250px !important;    
-        
-        /* 🟢 A MÁGICA PRA NÃO CORTAR: */
-        box-sizing: border-box !important; 
-        
-        /* 🟢 Deixa o Flexbox do container centralizar naturalmente */
-        margin: 15px 0 !important;      /* Margem só em cima e embaixo (zero nas laterais) */
-        left: auto !important;
-        right: auto !important;
-        transform: none !important;
-    }
-
-    /* Trava de segurança para as partes internas do envelope (abas, carta, etc) */
-    .envelope-wrapper *, #envelope * {
-        box-sizing: border-box !important;
-    }
-
-    /* Trava de segurança para a página não deixar nada vazar */
+/* Trava de segurança para a página não deixar nada vazar */
     .page, .content {
         width: 100% !important;
         box-sizing: border-box !important;
         overflow-x: hidden !important;  /* Apaga a sobra da direita */
     }
 
-    /* === 2. CAIXINHA DO P.S. (Corrigida sem texto em pé) === */
+    /* === ENVELOPE CENTRALIZADO À PROVA DE CORTES === */
+    .envelope-wrapper {
+        position: relative !important;
+        width: 100% !important;
+        max-width: 240px !important;     /* Margem segura na esquerda e direita */
+        box-sizing: border-box !important; 
+        margin: 20px auto !important;    /* Margem automática para centralizar */
+        padding: 0 !important;
+        display: flex !important;
+        justify-content: center !important; /* Força tudo a ficar no meio */
+        left: 0 !important;
+        right: 0 !important;
+        transform: none !important;
+    }
+
+    /* Trava a própria caixa verde do envelope */
+    #envelope, .envelope {
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        transform: none !important;
+    }
+
+    /* === 📦 CAIXINHA DO P.S. (POSIÇÃO NATURAL, SEM FLUTUAR) === */
     .ps-container {
-    position: absolute !important;
-        bottom: 12px !important;
-        
-        /* 🟢 Aumentamos a largura para ele ocupar quase o card inteiro */
-        width: 95% !important;
-        
-        /* 🟢 Posicionamento forçado a partir do centro */
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        
-        z-index: 10 !important;
-        pointer-events: none;
+        position: relative !important;   /* Agora ele respeita a página */
+        width: 100% !important;
+        margin-top: 15px !important;     /* Espacinho abaixo do botão */
+        margin-bottom: 0 !important;
+        padding: 0 10px !important;      /* Impede de encostar nas bordas */
+        box-sizing: border-box !important;
+        display: block !important;
     }
 
     /* ✍️ TEXTO DO P.S. */
     .voucher-note {
-        font-size: 0.75rem !important;
-        text-align: center !important;  /* Mantém o texto centralizado na nova caixinha larga */
+        font-size: 0.8rem !important;
+        text-align: center !important;   /* Texto no centro da página */
         color: #555 !important;
         margin: 0 auto !important;
-        padding: 0 !important;
         white-space: normal !important;
-        word-break: normal !important;
+        word-wrap: break-word !important;
     }
 
     /* TÍTULOS E BOTÕES */
