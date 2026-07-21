@@ -1,0 +1,483 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#EEF4EC;
+
+    overflow:hidden;
+
+}
+
+/* ===========================
+   FUNDO
+=========================== */
+
+#background{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        180deg,
+        #F8FBF7 0%,
+        #EEF4EC 100%
+    );
+
+    z-index:-2;
+
+}
+
+/* ===========================
+   LIVRO
+=========================== */
+
+#book{
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+/* ===========================
+   PÁGINAS
+=========================== */
+
+.page{
+
+    width:820px;
+
+    max-width:92%;
+
+    height:540px;
+
+    background:white;
+
+    border-radius:28px;
+
+    box-shadow:
+    0 25px 70px rgba(0,0,0,.12);
+
+    padding:60px;
+
+    position:absolute;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(20px);
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease;
+
+}
+
+.page.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+/* ===========================
+   CAPA
+=========================== */
+
+.cover{
+
+    background:
+    linear-gradient(
+        140deg,
+        #BFD6BE,
+        #A9C6A7
+    );
+
+    color:white;
+
+}
+
+.cover-content{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.cover h1{
+
+    font-family:
+    'Cormorant Garamond',
+    serif;
+
+    font-size:4rem;
+
+    margin-bottom:25px;
+
+}
+
+.subtitle{
+
+    font-size:1.1rem;
+
+    max-width:420px;
+
+    line-height:1.7;
+
+    opacity:.95;
+
+}
+
+#openBook{
+
+    margin-top:45px;
+
+    border:none;
+
+    padding:
+
+    15px 38px;
+
+    border-radius:999px;
+
+    background:white;
+
+    color:#5E7758;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#openBook:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 15px 30px
+    rgba(0,0,0,.12);
+
+}
+
+.made{
+
+    position:absolute;
+
+    bottom:28px;
+
+    opacity:.8;
+
+    font-size:.9rem;
+
+}/* ===========================
+   CONTEÚDO DAS PÁGINAS
+=========================== */
+
+.content{
+
+    height:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+}
+
+.content h2{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:3rem;
+
+    color:#5E7758;
+
+    margin-bottom:25px;
+
+}
+
+.content p{
+
+    max-width:620px;
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+    font-size:1.05rem;
+
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+.next,
+#restart{
+
+    margin-top:30px;
+
+    border:none;
+
+    background:#AFC8AD;
+
+    color:white;
+
+    padding:14px 34px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+}
+
+.next:hover,
+#restart:hover{
+
+    transform:translateY(-3px);
+
+    background:#96B394;
+
+}
+
+/* ===========================
+   GALERIA
+=========================== */
+
+.gallery{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+.gallery img{
+
+    width:130px;
+
+    height:165px;
+
+    object-fit:cover;
+
+    background:white;
+
+    padding:8px;
+
+    border-radius:8px;
+
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+
+    transition:.35s;
+
+    cursor:pointer;
+
+}
+
+.gallery img:nth-child(1){
+
+    transform:rotate(-8deg);
+
+}
+
+.gallery img:nth-child(2){
+
+    transform:rotate(5deg);
+
+}
+
+.gallery img:nth-child(3){
+
+    transform:rotate(-3deg);
+
+}
+
+.gallery img:nth-child(4){
+
+    transform:rotate(7deg);
+
+}
+
+.gallery img:nth-child(5){
+
+    transform:rotate(-6deg);
+
+}
+
+.gallery img:hover{
+
+    transform:scale(1.12) rotate(0deg);
+
+    z-index:20;
+
+}
+#photoMessage{
+
+    margin-top:18px;
+
+    font-size:.95rem;
+
+    color:#5E7758;
+
+    font-style:italic;
+
+    min-height:40px;
+
+    text-align:center;
+
+    max-width:520px;
+
+}
+/* ===========================
+   ENVELOPE
+=========================== */
+
+#envelope{
+
+    width:320px;
+
+    height:260px;
+
+    margin:80px auto 10px auto;
+
+    position:relative;
+
+    background:#8eb38c;
+
+    border-radius:8px;
+
+    overflow:visible;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+#flap{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100px;
+
+    background:#799b75;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:.8s;
+
+    z-index:2;
+
+}
+
+#voucher{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:-300px;
+
+    width:220px;
+
+    border-radius:10px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
+
+    transition:1s;
+
+    z-index: 10;
+
+}
+
+p.zap-message{
+
+    font-size: 14px !important;
+    margin-top: 35px !important;
+    color: #7b7b7b;
+    font-style: italic;
+
+}
+.voucher-note{
+
+    position:absolute;
+    bottom:5px;
+    left:85%;
+    transform:translateX(-50%);
+
+    width:90%;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:#7d8b7d;
+
+    font-style:italic;
+
+    opacity:.8;
+
+}
