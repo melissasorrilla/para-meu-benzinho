@@ -494,59 +494,67 @@ p.zap-message{
 
     /* Ajusta os tamanhos do container/páginas da carta */
     .page {
-      width: 90%;
+        width: 90%;
         height: auto;
-        min-height: 480px;        /* Mantém uma altura bonita */
-        padding: 30px 20px 25px 20px !important;       /* Distribui o espaço interno */
+        min-height: 480px;
+        padding: 25px 20px 45px 20px !important; /* Espaço na base para o PS */
         border-radius: 20px;
+        position: relative !important;           /* 🟢 Ancoragem vital para o PS */
         
-        /* 🟢 Força o conteúdo da página a se centralizar verticalmente */
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-    .content, .cover-content {
-        width: 100%;
-        height: 100%;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
     }
 
-    /* 🟢 SEGURANÇA PARA AS FOTOS NÃO DESCONFIGURAREM */
+    .content, .cover-content {
+        width: 100%;
+        height: auto !important;                 /* 🟢 Impede de empurrar coisas para fora */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* SEGURANÇA PARA AS FOTOS NÃO DESCONFIGURAREM */
     .page img {
         max-width: 100%;
         height: auto;
     }
+
     .fotos-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
+
+    /* ENVELOPE (DESTRAVADO) */
     .envelope-wrapper {
         position: relative;
         width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-        overflow: hidden;    /* Esconde o voucher antes da hora */
+        max-width: 280px;                        /* Tamanho ideal para celular */
+        margin: 10px auto;
+        overflow: visible !important;            /* 🟢 Destrava a animação do envelope e voucher */
         padding-top: 10px;
+        z-index: 2;
     }
 
-   .ps-container {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end; /* Empurra o conteúdo pro canto direito */
-        padding-right: 15px;      /* Distância da borda direita do card */
-        margin-top: 15px;         /* Espacinho acima dele */
-        box-sizing: border-box;
+    /* 📦 CAIXINHA DO P.S. (PREGADA NO CANTO DO CARD) */
+    .ps-container {
+        width: auto !important;
+        position: absolute !important;           /* 🟢 Garante que fique presa DENTRO do card branco */
+        bottom: 12px !important;                 /* Distância da borda inferior */
+        right: 20px !important;                  /* Distância da borda direita */
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 10;
+        pointer-events: none;                    /* Evita atrapalhar cliques no botão */
     }
 
     /* ✍️ ESTILO DO TEXTO DO P.S. */
     .voucher-note {
-        font-size: 0.8rem;
+        font-size: 0.75rem !important;
         text-align: right;
         margin: 0;
         padding: 0;
