@@ -529,19 +529,29 @@ p.zap-message{
     .envelope-wrapper {
         position: relative;
         width: 100%;
-        max-width: 430px;
+        max-width: 360px;
         margin: 0 auto;
         overflow: hidden;    /* Esconde o voucher antes da hora */
         padding-top: 10px;
     }
 
-   .voucher-note {
-       font-size: 0.8rem;
-        text-align: right;
+   .ps-container {
         width: 100%;
-        margin-top: 15px;
-        margin-bottom: 0;
-        padding-right: 5px;
+        display: flex;
+        justify-content: flex-end; /* Empurra o conteúdo pro canto direito */
+        padding-right: 15px;      /* Distância da borda direita do card */
+        margin-top: 15px;         /* Espacinho acima dele */
+        box-sizing: border-box;
+    }
+
+    /* ✍️ ESTILO DO TEXTO DO P.S. */
+    .voucher-note {
+        font-size: 0.8rem;
+        text-align: right;
+        margin: 0;
+        padding: 0;
+        white-space: normal;
+        word-break: break-word;
     }
 
     /* Reduz o tamanho do título principal da capa */
