@@ -497,7 +497,7 @@ p.zap-message{
       width: 90%;
         height: auto;
         min-height: 480px;        /* Mantém uma altura bonita */
-        padding: 40px 20px;       /* Distribui o espaço interno */
+        padding: 30px 20px 25px 20px !important;       /* Distribui o espaço interno */
         border-radius: 20px;
         
         /* 🟢 Força o conteúdo da página a se centralizar verticalmente */
@@ -535,22 +535,18 @@ p.zap-message{
         padding-top: 10px;
     }
 
-    .voucher-note {
-       font-size: 0.8rem;
-        margin-top: 15px;
-        
-        /* 🟢 Alinha todo o texto à direita */
+   .voucher-note {
+        font-size: 0.8rem;
         text-align: right; 
-        
-        /* 🟢 Garante espaço para a frase inteira sem cortar na borda da tela */
         width: 100%;
-        max-width: 100%;
-        padding-right: 10px; /* Pequeno respiro da borda direita */
-        margin-left: 0;      /* Remove qualquer empurrão da esquerda */
-        
-        /* Garante que, se a tela for bem pequena, o texto dobre de linha bonitinho */
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-right: 15px;
+        margin-left: 0;
         white-space: normal;
         word-break: break-word;
+        position: relative;
+    }
 
     /* Reduz o tamanho do título principal da capa */
     .cover h1 {
@@ -575,5 +571,4 @@ p.zap-message{
         margin-top: 25px;
         padding: 12px 28px;
     }
-}
 }
