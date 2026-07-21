@@ -502,6 +502,8 @@ p.zap-message{
         position: relative !important;           /* 🟢 Ancoragem vital para o PS */
         
         display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
