@@ -557,22 +557,28 @@ p.zap-message{
 
     /* === 2. CAIXINHA DO P.S. (Corrigida sem texto em pé) === */
     .ps-container {
-        position: absolute !important;
+      position: absolute !important;
         bottom: 15px !important;       /* Descola 15px do fundo */
-        right: 20px !important;        /* Descola 20px da direita */
-        width: max-content !important; /* 🟢 O segredo: a caixa assume o tamanho exato da frase */
-        max-width: 85% !important;     /* Trava de segurança para não vazar pra esquerda */
+        right: 20px !important;        /* Distância segura de 20px da borda direita */
+        
+        /* 🟢 A MÁGICA ESTÁ AQUI: */
+        width: auto !important;          /* Deixa o conteúdo definir o tamanho base */
+        min-width: 220px !important;    /* TRAVA DE SEGURANÇA: Garante que a caixa nunca fique menor que isso, impedindo o texto vertical */
+        max-width: 100% !important;     /* Garante que não ultrapasse a tela */
+        
         z-index: 10 !important;
+        pointer-events: none;
     }
 
     /* ✍️ TEXTO DO P.S. */
     .voucher-note {
         font-size: 0.8rem !important;
-        text-align: right !important;
-        color: #555 !important;        /* Uma corzinha mais suave, se quiser */
+        text-align: right !important;  /* Alinha o texto na direita (mantém sua preferência) */
+        color: #555 !important;
         margin: 0 !important;
         padding: 0 !important;
-        white-space: normal !important;
+        white-space: normal !important; /* Permite que o texto quebre em linhas inteiras (não letra por letra) */
+        word-break: normal !important;
     }
 
     /* TÍTULOS E BOTÕES */
