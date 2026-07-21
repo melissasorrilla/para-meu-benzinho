@@ -532,22 +532,23 @@ p.zap-message{
         gap: 10px;
     }
 /* Trava de segurança para a página não deixar nada vazar */
+   /* Trava de segurança para a página não deixar nada vazar */
     .page, .content {
         width: 100% !important;
         box-sizing: border-box !important;
-        overflow-x: hidden !important;  /* Apaga a sobra da direita */
+        overflow-x: hidden !important;
     }
 
-    /* === ENVELOPE CENTRALIZADO À PROVA DE CORTES === */
+    /* === ENVELOPE MENOR E CENTRALIZADO === */
     .envelope-wrapper {
         position: relative !important;
         width: 100% !important;
-        max-width: 240px !important;     /* Margem segura na esquerda e direita */
+        max-width: 200px !important;     /* 🟢 Reduzimos para 200px para ficar mais delicado! */
         box-sizing: border-box !important; 
-        margin: 20px auto !important;    /* Margem automática para centralizar */
+        margin: 20px auto !important;    
         padding: 0 !important;
         display: flex !important;
-        justify-content: center !important; /* Força tudo a ficar no meio */
+        justify-content: center !important; 
         left: 0 !important;
         right: 0 !important;
         transform: none !important;
@@ -560,27 +561,6 @@ p.zap-message{
         right: 0 !important;
         margin: 0 auto !important;
         transform: none !important;
-    }
-
-    /* === 📦 CAIXINHA DO P.S. (POSIÇÃO NATURAL, SEM FLUTUAR) === */
-    .ps-container {
-        position: relative !important;   /* Agora ele respeita a página */
-        width: 100% !important;
-        margin-top: 15px !important;     /* Espacinho abaixo do botão */
-        margin-bottom: 0 !important;
-        padding: 0 10px !important;      /* Impede de encostar nas bordas */
-        box-sizing: border-box !important;
-        display: block !important;
-    }
-
-    /* ✍️ TEXTO DO P.S. */
-    .voucher-note {
-        font-size: 0.8rem !important;
-        text-align: center !important;   /* Texto no centro da página */
-        color: #555 !important;
-        margin: 0 auto !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
     }
 
     /* TÍTULOS E BOTÕES */
