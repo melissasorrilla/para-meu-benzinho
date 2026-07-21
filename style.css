@@ -558,10 +558,13 @@ p.zap-message{
     /* === 2. CAIXINHA DO P.S. (Corrigida sem texto em pé) === */
     .ps-container {
     position: absolute !important;
-        bottom: 12px !important;       /* Fica no fundinho do card branco */
-        left: 0 !important;            /* Gruda na esquerda... */
-        right: 0 !important;           /* ...e na direita (ocupa 100%) */
-        width: 100% !important;
+        bottom: 12px !important;
+        
+        /* 🟢 O TRUQUE DE OURO: */
+        left: 50% !important;                   /* Joga a caixa pro meio da tela */
+        transform: translateX(-50%) !important; /* Puxa o eixo pro centro exato */
+        width: 90% !important;                  /* Ocupa a área segura sem encostar na borda */
+        
         z-index: 10 !important;
         pointer-events: none;
     }
@@ -569,10 +572,10 @@ p.zap-message{
     /* ✍️ TEXTO DO P.S. */
     .voucher-note {
         font-size: 0.75rem !important;
-        text-align: center !important; /* 🟢 Centraliza o texto embaixo do botão */
+        text-align: center !important;          /* Garante o texto no meinho */
         color: #555 !important;
-        margin: 0 auto !important;
-        padding: 0 20px !important;    /* 🟢 Impede que o texto encoste nas laterais */
+        margin: 0 !important;
+        padding: 0 !important;
         white-space: normal !important;
     }
 
