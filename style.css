@@ -534,34 +534,45 @@ p.zap-message{
 
     /* ENVELOPE DESTRAVADO */
     .envelope-wrapper {
-        position: relative;
-        width: 100%;
-        max-width: 260px;
-        margin: 10px auto;
-        overflow: visible !important;
-        padding-top: 10px;
-        z-index: 2;
+   position: relative !important;
+        width: 100% !important;
+        max-width: 250px !important;    /* Tamanho ideal para celular */
+        
+        /* 🟢 ESSENCIAIS PARA CENTRALIZAR PERFEITAMENTE: */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+        left: 0 !important;             /* Cancela qualquer deslocamento manual */
+        right: 0 !important;
+        transform: none !important;     /* Garante que nenhum 'translate' jogue ele pro lado */
+    }
+
+    /* Trava de segurança para a página não deixar nada vazar */
+    .page, .content {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;  /* Apaga a sobra da direita */
     }
 
     /* === 2. CAIXINHA DO P.S. (Corrigida sem texto em pé) === */
     .ps-container {
-        width: 100% !important;            /* 🟢 Largura total para não espremer o texto */
         position: absolute !important;
-        bottom: 12px !important;
-        right: 0 !important;
-        padding-right: 20px !important;    /* Distância da borda */
-        box-sizing: border-box !important;
-        z-index: 10;
-        pointer-events: none;
+        bottom: 15px !important;       /* Descola 15px do fundo */
+        right: 20px !important;        /* Descola 20px da direita */
+        width: max-content !important; /* 🟢 O segredo: a caixa assume o tamanho exato da frase */
+        max-width: 85% !important;     /* Trava de segurança para não vazar pra esquerda */
+        z-index: 10 !important;
     }
 
+    /* ✍️ TEXTO DO P.S. */
     .voucher-note {
-        font-size: 0.75rem !important;
+        font-size: 0.8rem !important;
         text-align: right !important;
+        color: #555 !important;        /* Uma corzinha mais suave, se quiser */
         margin: 0 !important;
         padding: 0 !important;
-        white-space: normal !important;    /* Força texto horizontal */
-        word-break: normal !important;
+        white-space: normal !important;
     }
 
     /* TÍTULOS E BOTÕES */
