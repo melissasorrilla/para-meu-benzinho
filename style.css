@@ -487,23 +487,24 @@ p.zap-message{
 =========================== */
 
 @media (max-width: 768px) {
-    /* Permite que a página role verticalmente no celular se o conteúdo for longo */
     body {
         overflow-y: auto;
     }
 
-    /* Ajusta os tamanhos do container/páginas da carta */
+    /* === 1. PÁGINAS (Esconde as inativas e mostra só a ativa) === */
     .page {
-        width: 90%;
-        height: auto;
-        min-height: 480px;
-        padding: 25px 20px 45px 20px !important; /* Espaço na base para o PS */
-        border-radius: 20px;
-        position: relative !important;           /* 🟢 Ancoragem vital para o PS */
-        
+        width: 90% !important;
+        height: auto !important;
+        min-height: 480px !important;
+        padding: 25px 20px 45px 20px !important;
+        border-radius: 20px !important;
+        position: relative !important; /* Ancoragem para o PS */
+        display: none !important;      /* 🟢 Esconde todas as páginas por padrão */
+    }
+
+    /* 🟢 MOSTRA APENAS A PÁGINA QUE ESTÁ ATIVA NO MOMENTO */
+    .page.active {
         display: flex !important;
-        opacity: 1 !important;
-        visibility: visible !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
@@ -511,14 +512,14 @@ p.zap-message{
 
     .content, .cover-content {
         width: 100%;
-        height: auto !important;                 /* 🟢 Impede de empurrar coisas para fora */
+        height: auto !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
         align-items: center !important;
     }
 
-    /* SEGURANÇA PARA AS FOTOS NÃO DESCONFIGURAREM */
+    /* FOTOS E IMAGENS */
     .page img {
         max-width: 100%;
         height: auto;
@@ -531,60 +532,41 @@ p.zap-message{
         gap: 10px;
     }
 
-    /* ENVELOPE (DESTRAVADO) */
+    /* ENVELOPE DESTRAVADO */
     .envelope-wrapper {
         position: relative;
         width: 100%;
-        max-width: 280px;                        /* Tamanho ideal para celular */
+        max-width: 260px;
         margin: 10px auto;
-        overflow: visible !important;            /* 🟢 Destrava a animação do envelope e voucher */
+        overflow: visible !important;
         padding-top: 10px;
         z-index: 2;
     }
 
-    /* 📦 CAIXINHA DO P.S. (PREGADA NO CANTO DO CARD) */
+    /* === 2. CAIXINHA DO P.S. (Corrigida sem texto em pé) === */
     .ps-container {
-        width: auto !important;
-        position: absolute !important;           /* 🟢 Garante que fique presa DENTRO do card branco */
-        bottom: 12px !important;                 /* Distância da borda inferior */
-        right: 20px !important;                  /* Distância da borda direita */
-        margin: 0 !important;
-        padding: 0 !important;
+        width: 100% !important;            /* 🟢 Largura total para não espremer o texto */
+        position: absolute !important;
+        bottom: 12px !important;
+        right: 0 !important;
+        padding-right: 20px !important;    /* Distância da borda */
+        box-sizing: border-box !important;
         z-index: 10;
-        pointer-events: none;                    /* Evita atrapalhar cliques no botão */
+        pointer-events: none;
     }
 
-    /* ✍️ ESTILO DO TEXTO DO P.S. */
     .voucher-note {
         font-size: 0.75rem !important;
-        text-align: right;
-        margin: 0;
-        padding: 0;
-        white-space: normal;
-        word-break: break-word;
+        text-align: right !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        white-space: normal !important;    /* Força texto horizontal */
+        word-break: normal !important;
     }
 
-    /* Reduz o tamanho do título principal da capa */
-    .cover h1 {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
-    }
-
-    /* Reduz o tamanho dos títulos internos */
-    .content h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-    }
-
-    /* Ajusta os parágrafos para o texto ler melhor em tela pequena */
-    .content p, .subtitle {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
-
-    /* Garante que os botões tenham espaço */
-    #openBook {
-        margin-top: 25px;
-        padding: 12px 28px;
-    }
+    /* TÍTULOS E BOTÕES */
+    .cover h1 { font-size: 2.5rem; margin-bottom: 15px; }
+    .content h2 { font-size: 2rem; margin-bottom: 15px; }
+    .content p, .subtitle { font-size: 0.95rem; line-height: 1.6; }
+    #openBook { margin-top: 25px; padding: 12px 28px; }
 }
