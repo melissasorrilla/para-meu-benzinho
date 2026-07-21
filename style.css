@@ -529,23 +529,19 @@ p.zap-message{
     .envelope-wrapper {
         position: relative;
         width: 100%;
-        max-width: 360px;
+        max-width: 430px;
         margin: 0 auto;
         overflow: hidden;    /* Esconde o voucher antes da hora */
         padding-top: 10px;
     }
 
    .voucher-note {
-        font-size: 0.8rem;
-        text-align: right; 
+       font-size: 0.8rem;
+        text-align: right;
         width: 100%;
-        margin-top: 10px;
+        margin-top: 15px;
         margin-bottom: 0;
-        padding-right: 15px;
-        margin-left: 0;
-        white-space: normal;
-        word-break: break-word;
-        position: relative;
+        padding-right: 5px;
     }
 
     /* Reduz o tamanho do título principal da capa */
